@@ -11,20 +11,21 @@
 schema:
   schema_id: sipa
   name: Semantic IPA
-  version: "0.0.5"
+  version: "0.1"
   author:
     - mkpoli <mkpoli@vip.qq.com>
+    - 謝觀心 <xieych@outlook.com>
   description: |
     IPA input method in Semantic IPA.
 
 switches:
   - name: ascii_mode
     reset: 0
-    states: [ 中文, 西文 ]
 
 engine:
   processors:
     - ascii_composer
+    - key_binder
     - speller
     - selector
     - navigator
@@ -42,3 +43,6 @@ speller:
 
 translator:
   dictionary: sipa
+
+key_binder:
+  import_preset: default
