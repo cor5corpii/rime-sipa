@@ -1,4 +1,10 @@
-Sementic IPA input method v0.0.5
+Sementic IPA input method v0.1
+
+This is a RIME input schema of International Phonetic Alphabet(IPA), forked from [mkpoli/SIPA4RIME] (https://github.com/mkpoli/SIPA4RIME) , and it will start from version "0.1" .
+
+Compared to the upstream repository, the `schema.yaml` file and `dict.yaml` file have been moved to the root directory to facilitate installation using [東風破](https://github.com/rime/plum). Of course, you can also directly copy the schema files to the user path and redeploy to enable it.
+
+At the same time, the RIME engine `key_binder` has been added, thus, when multiple candidate appear, the default RIME keybindings can be used to confirm the selection.
 
 # Basic Idea
 Semanticize IPA input method.
@@ -9,11 +15,11 @@ Semanticize IPA input method.
 
 `(place)(manner)[voiced?]`
 
-| Argument | Type | Content |
-| -------- |:-----:| ------- |
-| place    | Required | Place of articulation. See [the table](#place) below. |
+| Argument | Type     | Content                                                 |
+|----------|:--------:|---------------------------------------------------------|
+| place    | Required | Place of articulation. See [the table](#place) below.   |
 | manner   | Required | Manner of articulation. See [the table](#manner) below. |
-| voiced?  | Optional  | Decide if it is a voiced plosive/fricative/affricate. |
+| voiced?  | Optional | Decide if it is a voiced plosive/fricative/affricate.   |
 
 ### For example
 
@@ -25,11 +31,11 @@ Semanticize IPA input method.
 
 `(backness)(height)[rounded?]`
 
-| Argument | Type | Content |
-| -------- |:-----:| ------- |
+| Argument | Type     | Content                                              |
+|----------|:--------:|------------------------------------------------------|
 | backness | Required | Backness of vowel. See [the table](#backness) below. |
-| height   | Required | Height of vowel. See [the table](#height) below. |
-| rounded?  | Optional  | Decide if it is a rounded vowel. |
+| height   | Required | Height of vowel. See [the table](#height) below.     |
+| rounded? | Optional | Decide if it is a rounded vowel.                     |
 
 ## For diacritics
 
@@ -43,93 +49,93 @@ See [the table](#special) below.
 
 ## <span id="place">Place of Articulation</span>
 
-| Place | Code |
-| ----- | ---- |
-| Bilabial | `b` |
-| Labiodental | `l` |
-| Dental | `d` |
-| Alveolar | `a` |
-| Postalveolar | `o` |
-| Retroflex | `r` |
-| Palatal | `p` |
-| Velar | `v` |
-| Uvular | `u` |
-| Pharyngeal | `h` |
-| Glottal | `g` |
-| Bilabial-labiodental | `l` |
-| Labial-velar | `lv` |
-| Labial-palatal | `lp` |
-| Epiglottal | `e` |
-| Alveolo-palatal | `ap` |
-| Linguolabial | `ll` |
+| Place                | Code |
+|----------------------|------|
+| Bilabial             | `b`  |
+| Labiodental          | `l`  |
+| Dental               | `d`  |
+| Alveolar             | `a`  |
+| Postalveolar         | `o`  |
+| Retroflex            | `r`  |
+| Palatal              | `p`  |
+| Velar                | `v`  |
+| Uvular               | `u`  |
+| Pharyngeal           | `h`  |
+| Glottal              | `g`  |
+| Bilabial-labiodental | `l`  |
+| Labial-velar         | `lv` |
+| Labial-palatal       | `lp` |
+| Epiglottal           | `e`  |
+| Alveolo-palatal      | `ap` |
+| Linguolabial         | `ll` |
 
 
 ## <span id="manner">Manner of Articulation</span>
 
-| Manner | Code |
-| ----- | ---- |
-| Plosive | `p` |
-| Nasal | `n` |
-| Trill | `r` |
-| Tap or Flap | `t` |
-| Fricative | `f` |
-| Lateral fricative | `lf` |
-| Approximent | `a` |
-| Lateral approximent | `l` |
-| Affricate | `af` |
-| Lateral flap | `lt` |
+| Manner              | Code |
+|---------------------|------|
+| Plosive             | `p`  |
+| Nasal               | `n`  |
+| Trill               | `r`  |
+| Tap or Flap         | `t`  |
+| Fricative           | `f`  |
+| Lateral fricative   | `lf` |
+| Approximent         | `a`  |
+| Lateral approximent | `l`  |
+| Affricate           | `af` |
+| Lateral flap        | `lt` |
 
 ## <span id="backness">Backness of Vowel</span>
 
-| Backness | Code |
-| ----- | ---- |
-| Front | `f` |
-| Near-front | `f` |
-| Central | `c` |
-| Near-back | `b` |
-| Back | `b` |
+| Backness   | Code |
+|------------|------|
+| Front      | `f`  |
+| Near-front | `f`  |
+| Central    | `c`  |
+| Near-back  | `b`  |
+| Back       | `b`  |
 
 ## <span id="height">Height of Vowel</span>
 
-| Backness | Code |
-| ----- | ---- |
-| Close | `c` |
+| Backness   | Code |
+|------------|------|
+| Close      | `c`  |
 | Near-close | `c'` |
-| Close-mid | `cm` |
-| Mid | `m` |
-| Open-mid | `om` |
-| Near-open | `o'` |
-| Open | `o` |
+| Close-mid  | `cm` |
+| Mid        | `m`  |
+| Open-mid   | `om` |
+| Near-open  | `o'` |
+| Open       | `o`  |
 
 ## <span id="special">Special</span>
 
-| Symbol | Name | Code |
-| ------ | ---- | ---- |
-| ◌̚  | No audible release (Applosive) | `^app` |
-| ◌̥  | Voiceless | `v-` |
-| ◌̬ | Voiced | `v+` |
-| ◌̹ | More rounded | `r+` |
-| ◌̜ | Less rounded | `r-` |
-| ◌̟ | Advanced (Fronted) | `f+` |
-| ◌̠ | Retracted (Backed) | `f-` |
-| ◌̈ | Centralized | `c+` |
-| ◌̽ | Mid-centralized | `mc+` |
-| ◌̩ | Syllabic | `s+` |
-| ◌̯ | Non-syllabic | `s-` |
-| ◌˞ | Rhoticity | `+r` |
-| ◌̤ | Breathy voiced | `^gfv` |
-| ◌̰ | Creaky voiced | `cv+` |
-| ◌̼ | Linguolabial | (-) |
-| ◌̴ | Velarized or pharyngealized | `^vfv` or `^hfv` |
-| ◌̝ | Raised | `h+` |
-| ◌̞ | Lowered | `h-` |
-| ◌̘ | Advanced Tongue Root | `t+` |
-| ◌̙ | Retracted Tongue Root | `t-` |
-| ◌̪ | Dental | `d+` |
-| ◌̺ | Apical | `a+` |
-| ◌̻ | Laminal | `l+` |
-| ◌̃ | Nasalized | `n+` |
-| ◌͡◌ or ◌͜◌ | Tie Bar | `+` |
+| Symbol      | Name                           | Code             |
+|-------------|--------------------------------|------------------|
+| ◌̚         | No audible release (Applosive) | `^app`           |
+| ◌̥         | Voiceless                      | `v-`             |
+| ◌̬         | Voiced                         | `v+`             |
+| ◌̹         | More rounded                   | `r+`             |
+| ◌̜         | Less rounded                   | `r-`             |
+| ◌̟         | Advanced (Fronted)             | `f+`             |
+| ◌̠         | Retracted (Backed)             | `f-`             |
+| ◌̈         | Centralized                    | `c+`             |
+| ◌̽         | Mid-centralized                | `mc+`            |
+| ◌̩         | Syllabic                       | `s+`             |
+| ◌̯         | Non-syllabic                   | `s-`             |
+| ◌˞          | Rhoticity                      | `+r`             |
+| ◌̤         | Breathy voiced                 | `^gfv`           |
+| ◌̰         | Creaky voiced                  | `cv+`            |
+| ◌̼         | Linguolabial                   | (-)              |
+| ◌̴         | Velarized or pharyngealized    | `^vfv` or `^hfv` |
+| ◌̝         | Raised                         | `h+`             |
+| ◌̞         | Lowered                        | `h-`             |
+| ◌̘         | Advanced Tongue Root           | `t+`             |
+| ◌̙         | Retracted Tongue Root          | `t-`             |
+| ◌̪         | Dental                         | `d+`             |
+| ◌̺         | Apical                         | `a+`             |
+| ◌̻         | Laminal                        | `l+`             |
+| ◌̃         | Nasalized                      | `n+`             |
+| ◌͡◌ or ◌͜◌ | Tie Bar                        | `+`              |
 
 ### Notes
   1. Linguolabial is counted as a place of articulation
