@@ -1,8 +1,8 @@
 Sementic IPA input method v0.1
 
-This is a RIME input schema of International Phonetic Alphabet(IPA), forked from [mkpoli/SIPA4RIME] (https://github.com/mkpoli/SIPA4RIME) , and it will start from version "0.1" .
+This is a RIME input schema of International Phonetic Alphabet(IPA), forked from [mkpoli/SIPA4RIME](https://github.com/mkpoli/SIPA4RIME).
 
-Compared to the upstream repository, the `schema.yaml` file and `dict.yaml` file have been moved to the root directory to facilitate installation using [東風破](https://github.com/rime/plum). Of course, you can also directly copy the schema files to the user path and redeploy to enable it.
+Compared to the upstream repository, it will start from version "0.1". The `*.schema.yaml` file and `*.dict.yaml` file have been moved to the root directory to facilitate installation using [東風破](https://github.com/rime/plum). Of course, you can also directly copy the schema files to the user path and redeploy to enable it.
 
 At the same time, the RIME engine `key_binder` has been added, thus, when multiple candidate appear, the default RIME keybindings can be used to confirm the selection.
 
@@ -97,7 +97,7 @@ See [the table](#special) below.
 
 ## <span id="height">Height of Vowel</span>
 
-| Backness   | Code |
+| Height   | Code |
 |------------|------|
 | Close      | `c`  |
 | Near-close | `c'` |
